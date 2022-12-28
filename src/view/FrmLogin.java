@@ -66,6 +66,12 @@ public class FrmLogin extends javax.swing.JFrame {
         lblSenha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSenha.setText("Senha");
 
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
+
         btnEntrar.setBackground(new java.awt.Color(0, 102, 102));
         btnEntrar.setFont(new java.awt.Font("Source Sans Pro Light", 0, 14)); // NOI18N
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
@@ -181,6 +187,10 @@ public class FrmLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao encontrar usuário no banco","Erro",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
