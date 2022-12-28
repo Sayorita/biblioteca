@@ -48,6 +48,11 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         btnEditar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
 
+        setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+
         jPanel1.setBackground(new java.awt.Color(219, 188, 94));
 
         lblCabecalho.setFont(new java.awt.Font("Snap ITC", 1, 24)); // NOI18N
@@ -162,7 +167,7 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                                 .addComponent(btnEditar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnExcluir)))
-                        .addContainerGap(22, Short.MAX_VALUE))))
+                        .addContainerGap(28, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +209,7 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEditora)
                             .addComponent(txtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
