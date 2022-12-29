@@ -8,16 +8,22 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import model.Livros;
+import dao.DaoLivros;
+
 
 /**
  *
  * @author sarac
  */
 public class FrmCadLivros extends javax.swing.JInternalFrame {
+    DaoLivros cadlivro = new DaoLivros();
+    List<Livros> lista = new ArrayList<Livros>();
     /**
      * Creates new form FrmCadLivros
      */
     public FrmCadLivros() {
+        
         initComponents();
     }
 
@@ -130,6 +136,11 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -271,7 +282,28 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
- 
+       Livros livro = new Livros();
+       cadlivro.salvarLivro(livro);
+       
+       livro.titulo = txtTitulo.getText();
+       livro.autor = txtAutor.getText();
+       livro.ano = txtAno.getText();
+       livro.classificacao = cbxClassificacao.getSelectedItem().toString();
+       livro.estante = cbxEstante.getSelectedItem().toString();
+       livro.idEditora = txtEditora.getText();
+       
+       lista = cadlivro.getLivros();
+        
+       JOptionPane.showMessageDialog(this, "Livro salvo com sucesso!!!");
+        
+       txtTitulo.setText(lista.get(0).titulo);
+       txtAutor.setText(lista.get(0).autor);
+       txtAno.setText(lista.get(0).ano);
+       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
+       cbxEstante.setSelectedItem(lista.get(0).estante);
+       txtEditora.setText(lista.get(0).idEditora);
+       
+       
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtTituloKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTituloKeyPressed
@@ -291,6 +323,10 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             txtEditora.requestFocus();
         }
     }//GEN-LAST:event_txtAnoKeyPressed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+       
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -313,4 +349,14 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtEditora;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
+public void mostrarDadosTela() 
+{
+       txtTitulo.setText(lista.get(0).titulo);
+       txtAutor.setText(lista.get(0).autor);
+       txtAno.setText(lista.get(0).ano);
+       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
+       cbxEstante.setSelectedItem(lista.get(0).estante);
+       txtEditora.setText(lista.get(0).idEditora);
+    }
+
 }

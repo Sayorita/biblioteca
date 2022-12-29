@@ -28,6 +28,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         Desktop = new javax.swing.JDesktopPane();
+        lblBemvindo = new javax.swing.JLabel();
         menuPrincipal = new javax.swing.JMenuBar();
         menuCadastrar = new javax.swing.JMenu();
         itemMenuCadLivros = new javax.swing.JMenuItem();
@@ -38,15 +39,25 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lblBemvindo.setText("welcome to the library");
+
+        Desktop.setLayer(lblBemvindo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(DesktopLayout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addComponent(lblBemvindo)
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(DesktopLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(lblBemvindo)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         menuCadastrar.setText("Cadastrar");
@@ -166,6 +177,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Desktop;
     private javax.swing.JMenuItem itemMenuCadEmprestimos;
     private javax.swing.JMenuItem itemMenuCadLivros;
+    private javax.swing.JLabel lblBemvindo;
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu menuRelatorio;

@@ -5,9 +5,9 @@ package model;
 public class Livros {
     public int cod;
     public String titulo;
-    public int ano;
+    public String ano;
     public String autor;
-    public int idEditora;
+    public String idEditora;
     public String classificacao;
-    public int estante;    
+    public String estante;    
 }
