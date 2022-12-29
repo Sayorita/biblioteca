@@ -92,8 +92,8 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="lblEditora" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="txtEditora" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtEditora" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                   <Component id="btnNovo" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
@@ -224,10 +224,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTitulo">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTituloKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAutor">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAutorKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtAno">
+          <Events>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAnoKeyPressed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxClassificacao">
           <Properties>

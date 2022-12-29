@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -75,6 +76,24 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
 
         lblEstante.setFont(new java.awt.Font("Sylfaen", 0, 14)); // NOI18N
         lblEstante.setText("Estante: ");
+
+        txtTitulo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTituloKeyPressed(evt);
+            }
+        });
+
+        txtAutor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAutorKeyPressed(evt);
+            }
+        });
+
+        txtAno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtAnoKeyPressed(evt);
+            }
+        });
 
         cbxClassificacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selecionar--", "Ação", "Aventura", "Auto Ajuda", "Biografia", "Comédia ", "Conto", "Drama", "Ficção Cientifica", "Infato Juvenil", "Jovem Adulto", "Poesia", "Romance", "Suspense", " ", " ", " " }));
         cbxClassificacao.addComponentListener(new java.awt.event.ComponentAdapter() {
@@ -158,8 +177,8 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblEditora)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(74, 74, 74)
+                                .addComponent(txtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(60, 60, 60)
                                 .addComponent(btnNovo)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnSalvar)
@@ -254,6 +273,24 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
  
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void txtTituloKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTituloKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            txtAutor.requestFocus();
+        }
+    }//GEN-LAST:event_txtTituloKeyPressed
+
+    private void txtAutorKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAutorKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            txtAno.requestFocus();
+        }
+    }//GEN-LAST:event_txtAutorKeyPressed
+
+    private void txtAnoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnoKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            txtEditora.requestFocus();
+        }
+    }//GEN-LAST:event_txtAnoKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
