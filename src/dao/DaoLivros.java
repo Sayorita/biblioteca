@@ -24,7 +24,7 @@ public class DaoLivros {
         pstm.setString(5, lv.classificacao);
         pstm.setString(6, lv.estante);
         pstm.execute();
-        JOptionPane.showMessageDialog(null, "O livro "+lv.titulo+" foi salvo com êxito");
+        JOptionPane.showMessageDialog(null, "O livro foi salvo com êxito");
         
     }   
     catch(SQLException errocad)

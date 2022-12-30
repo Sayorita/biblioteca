@@ -18,11 +18,15 @@ import dao.DaoLivros;
 public class FrmCadLivros extends javax.swing.JInternalFrame {
     DaoLivros cadlivro = new DaoLivros();
     List<Livros> lista = new ArrayList<Livros>();
+    
+    int indice = 0;
     /**
      * Creates new form FrmCadLivros
      */
     public FrmCadLivros() {
         initComponents();
+        txtcod.setEnabled(false);
+        lista = cadlivro.getLivros();
     }
 
     /**
@@ -52,6 +56,8 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         btnExcluir = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
+        lblcod = new javax.swing.JLabel();
+        txtcod = new javax.swing.JTextField();
 
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setClosable(true);
@@ -147,6 +153,8 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             }
         });
 
+        lblcod.setText("cod");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -161,13 +169,19 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                                 .addGap(32, 32, 32)
                                 .addComponent(cbxEstante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(lblTitulo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(lblAno)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTitulo)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addComponent(lblcod)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -202,7 +216,11 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(lblCabecalho)
-                .addGap(43, 43, 43)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblcod)
+                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblAutor)
@@ -237,7 +255,7 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEditora)
                             .addComponent(txtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -280,8 +298,8 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        Livros livro = new Livros();
-       cadlivro.salvarLivro(livro);
+       Livros livro = new Livros();
+      
 
        livro.titulo = txtTitulo.getText();
        livro.autor = txtAutor.getText();
@@ -289,17 +307,23 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
        livro.classificacao = cbxClassificacao.getSelectedItem().toString();
        livro.estante = cbxEstante.getSelectedItem().toString();
        livro.idEditora = Integer.parseInt(txtEditora.getText());
-
+       
+       cadlivro.salvarLivro(livro);
+       lista.clear();
        lista = cadlivro.getLivros();
 
-       JOptionPane.showMessageDialog(this, "Livro salvo com sucesso!!!");
+       
+        indice = lista.size() - 1;
+        mostrarDadosTela();
+        
+       //JOptionPane.showMessageDialog(this, "Livro salvo com sucesso!!!");
 
-       txtTitulo.setText(lista.get(0).titulo);
-       txtAutor.setText(lista.get(0).autor);
-       txtAno.setText(""+lista.get(0).ano);
-       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
-       cbxEstante.setSelectedItem(lista.get(0).estante);
-       txtEditora.setText(""+lista.get(0).idEditora);
+       //txtTitulo.setText(lista.get(0).titulo);
+       //txtAutor.setText(lista.get(0).autor);
+       //txtAno.setText(""+lista.get(0).ano);
+       //cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
+       //cbxEstante.setSelectedItem(lista.get(0).estante);
+       //txtEditora.setText(""+lista.get(0).idEditora);
        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -354,10 +378,12 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblEditora;
     private javax.swing.JLabel lblEstante;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblcod;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtAutor;
     private javax.swing.JTextField txtEditora;
     private javax.swing.JTextField txtTitulo;
+    private javax.swing.JTextField txtcod;
     // End of variables declaration//GEN-END:variables
 public void mostrarDadosTela() 
 {
