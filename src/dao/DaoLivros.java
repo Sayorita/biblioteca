@@ -39,7 +39,7 @@ public class DaoLivros {
     try
     {
         
-        pstm = con.prepareStatement("UPDATE livro SET titulo=?, ano=?,autor?,idEditora=?,classificacao=?,estante=? WHERE cod = ?");
+        pstm = con.prepareStatement("UPDATE livro SET titulo=?, ano=?,autor=?,idEditora=?,classificacao=?,estante=? WHERE cod = ?");
         pstm.setString(1, lv.titulo);
         pstm.setInt(2, lv.ano);
         pstm.setString(3, lv.autor);

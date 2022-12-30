@@ -28,6 +28,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         Desktop = new javax.swing.JDesktopPane();
+        jLabel1 = new javax.swing.JLabel();
         menuPrincipal = new javax.swing.JMenuBar();
         menuCadastrar = new javax.swing.JMenu();
         itemMenuCadLivros = new javax.swing.JMenuItem();
@@ -38,15 +39,25 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel1.setText("jLabel1");
+
+        Desktop.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
+                .addContainerGap(222, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(141, 141, 141))
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
+                .addContainerGap(192, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(69, 69, 69))
         );
 
         menuCadastrar.setText("Cadastrar");
@@ -166,6 +177,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Desktop;
     private javax.swing.JMenuItem itemMenuCadEmprestimos;
     private javax.swing.JMenuItem itemMenuCadLivros;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu menuRelatorio;

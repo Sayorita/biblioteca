@@ -134,6 +134,11 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         });
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -294,7 +299,7 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
        txtAno.setText(""+lista.get(0).ano);
        cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
        cbxEstante.setSelectedItem(lista.get(0).estante);
-       txtEditora.setText(""+lista.get(0).ano);
+       txtEditora.setText(""+lista.get(0).idEditora);
        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
@@ -315,6 +320,23 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             txtEditora.requestFocus();
         }
     }//GEN-LAST:event_txtAnoKeyPressed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        int recid = Integer.parseInt(txtEditora.getText());
+        for(int i = 0; i < lista.size(); i++)
+        {
+            if(lista.get(i).idEditora == recid)
+            {
+                lista.get(i).titulo = txtTitulo.getText();
+                lista.get(0).autor = txtAutor.getText();
+                lista.get(0).ano = Integer.parseInt(txtAno.getText());
+                lista.get(i).classificacao = cbxClassificacao.getSelectedItem().toString();
+                lista.get(i).estante = cbxEstante.getSelectedItem().toString();
+                lista.get(0).idEditora = Integer.parseInt(txtEditora.getText());
+                JOptionPane.showMessageDialog(this, "O livro "+ lista.get(i).titulo +" foi editado com sucesso!");
+            }
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
