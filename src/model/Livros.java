@@ -9,5 +9,5 @@ public class Livros {
     public String autor;
     public int idEditora;
     public String classificacao;
-    public int estante;    
+    public String estante;    
 }

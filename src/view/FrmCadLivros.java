@@ -8,12 +8,16 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import model.Livros;
+import dao.DaoLivros;
 
 /**
  *
  * @author sarac
  */
 public class FrmCadLivros extends javax.swing.JInternalFrame {
+    DaoLivros cadlivro = new DaoLivros();
+    List<Livros> lista = new ArrayList<Livros>();
     /**
      * Creates new form FrmCadLivros
      */
@@ -145,10 +149,6 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblCabecalho)
-                        .addGap(182, 182, 182))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -180,13 +180,17 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                                 .addComponent(txtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
                                 .addComponent(btnNovo)
-                                .addGap(18, 18, 18)
+                                .addGap(24, 24, 24)
                                 .addComponent(btnSalvar)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnEditar)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnExcluir)))
-                        .addContainerGap(28, Short.MAX_VALUE))))
+                        .addContainerGap(28, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblCabecalho)
+                        .addGap(182, 182, 182))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,7 +275,27 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
- 
+        Livros livro = new Livros();
+       cadlivro.salvarLivro(livro);
+
+       livro.titulo = txtTitulo.getText();
+       livro.autor = txtAutor.getText();
+       livro.ano = Integer.parseInt(txtAno.getText());
+       livro.classificacao = cbxClassificacao.getSelectedItem().toString();
+       livro.estante = cbxEstante.getSelectedItem().toString();
+       livro.idEditora = Integer.parseInt(txtEditora.getText());
+
+       lista = cadlivro.getLivros();
+
+       JOptionPane.showMessageDialog(this, "Livro salvo com sucesso!!!");
+
+       txtTitulo.setText(lista.get(0).titulo);
+       txtAutor.setText(lista.get(0).autor);
+       txtAno.setText(""+lista.get(0).ano);
+       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
+       cbxEstante.setSelectedItem(lista.get(0).estante);
+       txtEditora.setText(""+lista.get(0).ano);
+       
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void txtTituloKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTituloKeyPressed
@@ -313,4 +337,14 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtEditora;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
+public void mostrarDadosTela() 
+{
+        txtTitulo.setText(lista.get(0).titulo);
+       txtAutor.setText(lista.get(0).autor);
+       txtAno.setText(""+lista.get(0).ano);
+       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
+       cbxEstante.setSelectedItem(lista.get(0).estante);
+       txtEditora.setText(""+lista.get(0).ano);
+       
+    }
 }
