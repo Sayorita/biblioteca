@@ -22,7 +22,7 @@ public class DaoLivros {
         pstm.setString(3, lv.autor);
         pstm.setInt(4, lv.idEditora);
         pstm.setString(5, lv.classificacao);
-        pstm.setInt(6, lv.estante);
+        pstm.setString(6, lv.estante);
         pstm.execute();
         JOptionPane.showMessageDialog(null, "O livro "+lv.titulo+" foi salvo com êxito");
         
@@ -45,7 +45,7 @@ public class DaoLivros {
         pstm.setString(3, lv.autor);
         pstm.setInt(4, lv.idEditora);
         pstm.setString(5, lv.classificacao);
-        pstm.setInt(6, lv.estante);
+        pstm.setString(6, lv.estante);
         
         pstm.execute();
         JOptionPane.showMessageDialog(null, "O livro "+lv.titulo+" foi alterado com êxito");
