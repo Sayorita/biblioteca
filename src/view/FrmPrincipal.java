@@ -39,26 +39,30 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel1.setText("Bem vindo a Biblioteca");
+        jLabel1.setToolTipText("");
 
-        Desktop.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(jLabel1, javax.swing.JLayeredPane.DRAG_LAYER);
 
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
-                .addContainerGap(222, Short.MAX_VALUE)
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(141, 141, 141))
+                .addGap(27, 27, 27))
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
+                .addContainerGap(227, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(69, 69, 69))
+                .addGap(126, 126, 126))
         );
+
+        menuPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         menuCadastrar.setText("Cadastrar");
 

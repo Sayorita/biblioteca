@@ -53,11 +53,14 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         txtEditora = new javax.swing.JTextField();
         cbxEstante = new javax.swing.JComboBox<>();
         btnNovo = new javax.swing.JButton();
-        btnExcluir = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnSalvar = new javax.swing.JButton();
         lblcod = new javax.swing.JLabel();
         txtcod = new javax.swing.JTextField();
+        btnAnterior = new javax.swing.JButton();
+        btnProximo = new javax.swing.JButton();
+        btnPrimeiro = new javax.swing.JButton();
+        btnUltimo = new javax.swing.JButton();
 
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setClosable(true);
@@ -132,13 +135,6 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             }
         });
 
-        btnExcluir.setText("Excluir");
-        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExcluirActionPerformed(evt);
-            }
-        });
-
         btnEditar.setText("Editar");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +150,34 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         });
 
         lblcod.setText("cod");
+
+        btnAnterior.setText("<<");
+        btnAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnteriorActionPerformed(evt);
+            }
+        });
+
+        btnProximo.setText(">>");
+        btnProximo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProximoActionPerformed(evt);
+            }
+        });
+
+        btnPrimeiro.setText("|<");
+        btnPrimeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrimeiroActionPerformed(evt);
+            }
+        });
+
+        btnUltimo.setText(">|");
+        btnUltimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUltimoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -180,8 +204,8 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                                         .addComponent(lblcod)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -198,14 +222,24 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(60, 60, 60)
-                                .addComponent(btnNovo)
-                                .addGap(24, 24, 24)
-                                .addComponent(btnSalvar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnEditar)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnExcluir)))
-                        .addContainerGap(28, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnNovo)
+                                    .addComponent(btnAnterior))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnProximo)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                                        .addComponent(btnPrimeiro)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnUltimo))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnSalvar)
+                                        .addGap(45, 45, 45)
+                                        .addComponent(btnEditar)
+                                        .addGap(38, 38, 38)))))
+                        .addGap(16, 16, 16))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lblCabecalho)
@@ -217,10 +251,10 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(lblCabecalho)
                 .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblcod)
-                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(txtcod, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblAutor)
@@ -240,12 +274,17 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                     .addComponent(cbxClassificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
+                        .addGap(59, 59, 59)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAnterior)
+                            .addComponent(btnProximo)
+                            .addComponent(btnPrimeiro)
+                            .addComponent(btnUltimo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSalvar)
                             .addComponent(btnNovo)
-                            .addComponent(btnEditar)
-                            .addComponent(btnExcluir)))
+                            .addComponent(btnEditar)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,10 +331,6 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
         cbxClassificacao.setSelectedItem("--Selecionar--");
         cbxEstante.setSelectedItem("--Selecionar--");       
     }//GEN-LAST:event_btnNovoActionPerformed
-
-    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-
-    }//GEN-LAST:event_btnExcluirActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
        Livros livro = new Livros();
@@ -352,22 +387,76 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             if(lista.get(i).idEditora == recid)
             {
                 lista.get(i).titulo = txtTitulo.getText();
-                lista.get(0).autor = txtAutor.getText();
-                lista.get(0).ano = Integer.parseInt(txtAno.getText());
+                lista.get(i).autor = txtAutor.getText();
+                lista.get(i).ano = Integer.parseInt(txtAno.getText());
                 lista.get(i).classificacao = cbxClassificacao.getSelectedItem().toString();
                 lista.get(i).estante = cbxEstante.getSelectedItem().toString();
-                lista.get(0).idEditora = Integer.parseInt(txtEditora.getText());
+                lista.get(i).idEditora = Integer.parseInt(txtEditora.getText());
                 JOptionPane.showMessageDialog(this, "O livro "+ lista.get(i).titulo +" foi editado com sucesso!");
             }
         }
     }//GEN-LAST:event_btnEditarActionPerformed
 
+    private void btnAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnteriorActionPerformed
+        if(indice>0){
+            indice--;
+            btnProximo.setEnabled(true);
+            btnUltimo.setEnabled(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "Você já está no primeiro Registro", "Atenção", JOptionPane.WARNING_MESSAGE);
+            btnPrimeiro.setEnabled(false);
+            btnAnterior.setEnabled(false);
+            btnProximo.setEnabled(true);
+            btnUltimo.setEnabled(true);
+        }
+        mostrarDadosTela();
+    }//GEN-LAST:event_btnAnteriorActionPerformed
+
+    private void btnProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProximoActionPerformed
+        if(indice<lista.size()-1)
+        {
+            indice ++;
+            btnAnterior.setEnabled(true);
+            btnPrimeiro.setEnabled(true);
+        }else
+        {
+            JOptionPane.showMessageDialog(this, "Você já está no ultimo Registro", "Atenção",JOptionPane.WARNING_MESSAGE);
+            btnProximo.setEnabled(false);
+            btnUltimo.setEnabled(false);
+            btnAnterior.setEnabled(true);
+            btnPrimeiro.setEnabled(true);
+        }
+        
+        mostrarDadosTela();
+    }//GEN-LAST:event_btnProximoActionPerformed
+
+    private void btnPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimeiroActionPerformed
+        indice = 0;
+        mostrarDadosTela();
+        btnPrimeiro.setEnabled(false);
+        btnAnterior.setEnabled(false);
+        btnProximo.setEnabled(true);
+        btnUltimo.setEnabled(true);
+    }//GEN-LAST:event_btnPrimeiroActionPerformed
+
+    private void btnUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUltimoActionPerformed
+        indice = lista.size()-1;
+        mostrarDadosTela();
+        btnPrimeiro.setEnabled(true);
+        btnAnterior.setEnabled(true);
+        btnProximo.setEnabled(false);
+        btnUltimo.setEnabled(false);
+    }//GEN-LAST:event_btnUltimoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAnterior;
     private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnNovo;
+    private javax.swing.JButton btnPrimeiro;
+    private javax.swing.JButton btnProximo;
     private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnUltimo;
     private javax.swing.JComboBox<String> cbxClassificacao;
     private javax.swing.JComboBox<String> cbxEstante;
     private javax.swing.JPanel jPanel1;
@@ -387,12 +476,12 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 public void mostrarDadosTela() 
 {
-        txtTitulo.setText(lista.get(0).titulo);
-       txtAutor.setText(lista.get(0).autor);
-       txtAno.setText(""+lista.get(0).ano);
-       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
-       cbxEstante.setSelectedItem(lista.get(0).estante);
-       txtEditora.setText(""+lista.get(0).ano);
+       txtTitulo.setText(lista.get(indice).titulo);
+       txtAutor.setText(lista.get(indice).autor);
+       txtAno.setText(""+lista.get(indice).ano);
+       cbxClassificacao.setSelectedItem(lista.get(indice).classificacao);
+       cbxEstante.setSelectedItem(lista.get(indice).estante);
+       txtEditora.setText(""+lista.get(indice).ano);
        
     }
 }
