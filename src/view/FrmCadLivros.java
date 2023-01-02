@@ -387,12 +387,12 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 public void mostrarDadosTela() 
 {
-        txtTitulo.setText(lista.get(0).titulo);
-       txtAutor.setText(lista.get(0).autor);
-       txtAno.setText(""+lista.get(0).ano);
-       cbxClassificacao.setSelectedItem(lista.get(0).classificacao);
-       cbxEstante.setSelectedItem(lista.get(0).estante);
-       txtEditora.setText(""+lista.get(0).ano);
+        txtTitulo.setText(lista.get(indice).titulo);
+       txtAutor.setText(lista.get(indice).autor);
+       txtAno.setText(""+lista.get(indice).ano);
+       cbxClassificacao.setSelectedItem(lista.get(indice).classificacao);
+       cbxEstante.setSelectedItem(lista.get(indice).estante);
+       txtEditora.setText(""+lista.get(indice).ano);
        
     }
 }

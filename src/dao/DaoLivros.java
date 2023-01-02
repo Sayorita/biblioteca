@@ -29,7 +29,7 @@ public class DaoLivros {
     }   
     catch(SQLException errocad)
     {
-        JOptionPane.showMessageDialog(null, "Erro ao cadastrar o livro no BAnco de Dados. Tente novamente mais tarde."+errocad);
+        JOptionPane.showMessageDialog(null, "Erro ao cadastrar o livro no Banco de Dados. Tente novamente mais tarde."+errocad);
     }
 }
     
@@ -48,7 +48,7 @@ public class DaoLivros {
         pstm.setString(6, lv.estante);
         
         pstm.execute();
-        JOptionPane.showMessageDialog(null, "O livro "+lv.titulo+" foi alterado com êxito");
+        JOptionPane.showMessageDialog(null, "O livro foi alterado com êxito");
         
     }   
     catch(SQLException erralt)
