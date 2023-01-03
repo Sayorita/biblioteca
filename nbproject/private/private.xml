@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Everton%20Leon/Desktop/biblioteca-main/src/view/FrmPrincipal.java</file>
-            <file>file:/C:/Users/Everton%20Leon/Desktop/biblioteca-main/src/model/Livros.java</file>
-            <file>file:/C:/Users/Everton%20Leon/Desktop/biblioteca-main/src/biblioteca_everton_sara/Biblioteca_everton_sara.java</file>
-            <file>file:/C:/Users/Everton%20Leon/Desktop/biblioteca-main/src/view/FrmLogin.java</file>
-            <file>file:/C:/Users/Everton%20Leon/Desktop/biblioteca-main/src/view/FrmCadLivros.java</file>
-            <file>file:/C:/Users/Everton%20Leon/Desktop/biblioteca-main/src/dao/DaoLivros.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

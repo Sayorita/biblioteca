@@ -34,6 +34,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         itemMenuCadLivros = new javax.swing.JMenuItem();
         itemMenuCadEmprestimos = new javax.swing.JMenuItem();
         menuRelatorio = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menuUtil = new javax.swing.JMenu();
         menuSair = new javax.swing.JMenu();
 
@@ -76,7 +77,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuCadastrar.add(itemMenuCadLivros);
 
         itemMenuCadEmprestimos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itemMenuCadEmprestimos.setText("Emprétimo");
+        itemMenuCadEmprestimos.setText("Empréstimo");
         itemMenuCadEmprestimos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemMenuCadEmprestimosActionPerformed(evt);
@@ -87,6 +88,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
         menuPrincipal.add(menuCadastrar);
 
         menuRelatorio.setText("Relatório");
+
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem1.setText("Livros Cadastrados");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuRelatorio.add(jMenuItem1);
+
         menuPrincipal.add(menuRelatorio);
 
         menuUtil.setText("Útil");
@@ -119,6 +130,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
@@ -141,6 +153,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         Desktop.add(emp);
         emp.setVisible(true);
     }//GEN-LAST:event_itemMenuCadEmprestimosActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,6 +198,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemMenuCadEmprestimos;
     private javax.swing.JMenuItem itemMenuCadLivros;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu menuCadastrar;
     private javax.swing.JMenuBar menuPrincipal;
     private javax.swing.JMenu menuRelatorio;

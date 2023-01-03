@@ -4,18 +4,29 @@
  */
 package view;
 
-/**
- *
- * @author sarac
- */
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import model.Emprestimos;
+import dao.DaoEmprestimos;
+
+
 public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FrmCadEmprestimos
-     */
+    DaoEmprestimos distri = new DaoEmprestimos();
+    List<Emprestimos> lista = new ArrayList<Emprestimos>();
+    int indice = 0;
+          
     public FrmCadEmprestimos() {
         initComponents();
+          
+        
+        
     }
+    
+ 
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,12 +84,22 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
         lblDataDevolucao.setText("Data Prevista Devolução:");
 
         btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnEditar.setText("Editar");
 
         btnExcluir.setText("Excluir");
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         txtDataDevolucao.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("##/##/####"))));
 
@@ -176,6 +197,27 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        txtIDEmprestimo.setText("");
+        txtNome.setText("");
+        txtNCadastro.setText("");
+        txtNCadastro.setText("");
+        txtDataEmprestimo.setText("");
+        txtDataDevolucao.setText("");
+    }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+       Emprestimos empt = new Emprestimos();
+       
+       empt.idEmprestimo = Integer.parseInt(txtIDEmprestimo.getText());
+       empt.nome = txtNome.getText();
+       empt.nCadastro = Integer.parseInt(txtNCadastro.getText());
+      // empt.codLivro = 
+      //
+      empt.dataEmpre = Integer.parseInt(txtDataEmprestimo.getText());
+      empt.dataDevo = Integer.parseInt(txtDataDevolucao.getText());
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

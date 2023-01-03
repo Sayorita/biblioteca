@@ -29,7 +29,7 @@ public class DaoLivros {
     }   
     catch(SQLException errocad)
     {
-        JOptionPane.showMessageDialog(null, "Erro ao cadastrar o livro no BAnco de Dados. Tente novamente mais tarde."+errocad);
+        JOptionPane.showMessageDialog(null, "Erro ao cadastrar o livro no Banco de Dados. Tente novamente mais tarde."+errocad);
     }
 }
     
@@ -39,16 +39,17 @@ public class DaoLivros {
     try
     {
         
-        pstm = con.prepareStatement("UPDATE livro SET titulo=?, ano=?,autor=?,idEditora=?,classificacao=?,estante=? WHERE cod = ?");
+        pstm = con.prepareStatement("UPDATE livros SET titulo=?, ano=?,autor=?,idEditora=?,classificacao=?,estante=? WHERE cod = ?");     
         pstm.setString(1, lv.titulo);
         pstm.setInt(2, lv.ano);
         pstm.setString(3, lv.autor);
         pstm.setInt(4, lv.idEditora);
         pstm.setString(5, lv.classificacao);
         pstm.setString(6, lv.estante);
+        pstm.setInt(7, lv.cod);
         
         pstm.execute();
-        JOptionPane.showMessageDialog(null, "O livro "+lv.titulo+" foi alterado com êxito");
+        JOptionPane.showMessageDialog(null, "O livro foi alterado com êxito");
         
     }   
     catch(SQLException erralt)
@@ -63,7 +64,7 @@ public class DaoLivros {
     try
     {
         
-        pstm = con.prepareStatement("DELETE FROM livro WHERE cod = ?");
+        pstm = con.prepareStatement("DELETE FROM livros WHERE cod = ?");
         pstm.setInt(1, cod);
         pstm.execute();
         JOptionPane.showMessageDialog(null, "O livro selecionado foi deletado do sistema");
