@@ -172,6 +172,12 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
 
         lblcod.setText("cod");
 
+        txtcod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcodActionPerformed(evt);
+            }
+        });
+
         btnAnterior.setText("<<");
         btnAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -561,6 +567,10 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
                
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void txtcodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcodActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
