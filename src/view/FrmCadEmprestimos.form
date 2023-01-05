@@ -68,7 +68,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="171" max="32767" attributes="0"/>
+                      <EmptySpace pref="174" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
@@ -136,7 +136,7 @@
                   <Component id="txtDataEmprestimo" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="txtDataDevolucao" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="51" max="32767" attributes="0"/>
+              <EmptySpace pref="34" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnNovo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -151,7 +151,7 @@
     <Component class="javax.swing.JLabel" name="lblNome">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nome:"/>
       </Properties>
@@ -159,7 +159,7 @@
     <Component class="javax.swing.JLabel" name="lblNCadastro">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N&#xba; do Cadastro:"/>
       </Properties>
@@ -167,7 +167,7 @@
     <Component class="javax.swing.JLabel" name="lblCodLivro">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CodLivro:"/>
       </Properties>
@@ -175,7 +175,7 @@
     <Component class="javax.swing.JLabel" name="lblTitulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="T&#xed;tulo:"/>
       </Properties>
@@ -191,7 +191,7 @@
     <Component class="javax.swing.JLabel" name="lblDataEmprestimo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Data Empr&#xe9;stimo:"/>
       </Properties>
@@ -199,7 +199,7 @@
     <Component class="javax.swing.JLabel" name="lblDataDevolucao">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Data Prevista Devolu&#xe7;&#xe3;o:"/>
       </Properties>
@@ -249,7 +249,7 @@
     <Component class="javax.swing.JLabel" name="lblIDEmprestimo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Sans Unicode" size="14" style="0"/>
+          <Font name="Myanmar Text" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="ID Empr&#xe9;stimo:"/>
       </Properties>

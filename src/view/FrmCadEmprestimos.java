@@ -74,25 +74,25 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setTitle("Empréstimo");
 
-        lblNome.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblNome.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblNome.setText("Nome:");
 
-        lblNCadastro.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblNCadastro.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblNCadastro.setText("Nº do Cadastro:");
 
-        lblCodLivro.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblCodLivro.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblCodLivro.setText("CodLivro:");
 
-        lblTitulo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblTitulo.setText("Título:");
 
         lblStatus.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         lblStatus.setText("Status:");
 
-        lblDataEmprestimo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblDataEmprestimo.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblDataEmprestimo.setText("Data Empréstimo:");
 
-        lblDataDevolucao.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblDataDevolucao.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblDataDevolucao.setText("Data Prevista Devolução:");
 
         btnNovo.setText("Novo");
@@ -134,7 +134,7 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
             }
         });
 
-        lblIDEmprestimo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
+        lblIDEmprestimo.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         lblIDEmprestimo.setText("ID Empréstimo:");
 
         txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -186,7 +186,7 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
                                     .addComponent(txtNCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
                                     .addComponent(cbxCodLivro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTitulo))))
-                        .addContainerGap(171, Short.MAX_VALUE))
+                        .addContainerGap(174, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -238,7 +238,7 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNovo)
                     .addComponent(btnEditar)
