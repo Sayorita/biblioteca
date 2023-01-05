@@ -125,6 +125,7 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtDataEmprestimo.setToolTipText("");
 
         lblIDEmprestimo.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 14)); // NOI18N
         lblIDEmprestimo.setText("ID Empréstimo:");
