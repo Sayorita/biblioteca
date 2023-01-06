@@ -51,16 +51,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
         DesktopLayout.setHorizontalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
+                .addContainerGap(130, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(27, 27, 27))
+                .addContainerGap())
         );
         DesktopLayout.setVerticalGroup(
             DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DesktopLayout.createSequentialGroup()
-                .addContainerGap(227, Short.MAX_VALUE)
+                .addContainerGap(287, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(126, 126, 126))
+                .addGap(66, 66, 66))
         );
 
         menuPrincipal.setBorder(javax.swing.BorderFactory.createEtchedBorder());
