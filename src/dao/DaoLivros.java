@@ -92,6 +92,7 @@ public class DaoLivros {
             livro.ano = rs.getInt("ano");
             livro.autor = rs.getString("autor");
             livro.idEditora = rs.getInt("idEditora");
+            livro.estante = rs.getString("estante");
             livro.classificacao = rs.getString("classificacao");
             
          
