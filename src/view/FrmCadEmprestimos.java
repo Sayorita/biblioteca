@@ -69,6 +69,10 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
         txtTitulo = new javax.swing.JTextField();
         rbdDisponivel = new javax.swing.JRadioButton();
         rbdEmprestado = new javax.swing.JRadioButton();
+        bntPrimeiro = new javax.swing.JButton();
+        bntAnterior = new javax.swing.JButton();
+        bntProximo = new javax.swing.JButton();
+        bntUltimo = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(211, 231, 211));
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -166,15 +170,43 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
         grupoEmprestimo.add(rbdEmprestado);
         rbdEmprestado.setText("Emprestado");
 
+        bntPrimeiro.setText("|<");
+        bntPrimeiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntPrimeiroActionPerformed(evt);
+            }
+        });
+
+        bntAnterior.setText("<<");
+        bntAnterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntAnteriorActionPerformed(evt);
+            }
+        });
+
+        bntProximo.setText(">>");
+        bntProximo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntProximoActionPerformed(evt);
+            }
+        });
+
+        bntUltimo.setText(">|");
+        bntUltimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntUltimoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
+                        .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,24 +230,37 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
                                         .addComponent(cbxCodLivro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtTitulo)
                                         .addComponent(rbdDisponivel)))))
-                        .addContainerGap(174, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnNovo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                                 .addComponent(btnEditar)
                                 .addGap(154, 154, 154)
                                 .addComponent(btnSalvar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblDataEmprestimo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblDataDevolucao)))
-                        .addGap(60, 60, 60))))
+                                .addComponent(lblDataDevolucao))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(78, 78, 78)
+                                        .addComponent(bntAnterior)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDataDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(bntProximo)
+                                        .addGap(75, 75, 75)))))
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(bntPrimeiro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bntUltimo)
+                        .addGap(57, 57, 57))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +304,13 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
                     .addComponent(btnNovo)
                     .addComponent(btnEditar)
                     .addComponent(btnSalvar))
-                .addGap(42, 42, 42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bntPrimeiro)
+                    .addComponent(bntAnterior)
+                    .addComponent(bntProximo)
+                    .addComponent(bntUltimo))
+                .addGap(13, 13, 13))
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -364,8 +415,63 @@ public class FrmCadEmprestimos extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_btnEditarActionPerformed
 
+    private void bntPrimeiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntPrimeiroActionPerformed
+        indice = 0;
+        exibirDados();
+        bntPrimeiro.setEnabled(false);
+        bntAnterior.setEnabled(false);
+        bntProximo.setEnabled(true);
+        bntUltimo.setEnabled(true);
+    }//GEN-LAST:event_bntPrimeiroActionPerformed
+
+    private void bntAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntAnteriorActionPerformed
+        if(indice>0){
+            indice--;
+            bntProximo.setEnabled(true);
+            bntUltimo.setEnabled(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "Você já está no primeiro Registro", "Atenção", JOptionPane.WARNING_MESSAGE);
+            bntPrimeiro.setEnabled(false);
+            bntAnterior.setEnabled(false);
+            bntProximo.setEnabled(true);
+            bntUltimo.setEnabled(true);
+        }
+        exibirDados();
+    }//GEN-LAST:event_bntAnteriorActionPerformed
+
+    private void bntProximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntProximoActionPerformed
+         if(indice<lista.size()-1)
+        {
+            indice ++;
+            bntAnterior.setEnabled(true);
+            bntPrimeiro.setEnabled(true);
+        }else
+        {
+            JOptionPane.showMessageDialog(this, "Você já está no ultimo Registro", "Atenção",JOptionPane.WARNING_MESSAGE);
+            bntProximo.setEnabled(false);
+            bntUltimo.setEnabled(false);
+            bntAnterior.setEnabled(true);
+            bntPrimeiro.setEnabled(true);
+        }
+        
+        exibirDados();
+    }//GEN-LAST:event_bntProximoActionPerformed
+
+    private void bntUltimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntUltimoActionPerformed
+        indice = lista.size()-1;
+        exibirDados();
+        bntPrimeiro.setEnabled(true);
+        bntAnterior.setEnabled(true);
+        bntProximo.setEnabled(false);
+        bntUltimo.setEnabled(false);
+    }//GEN-LAST:event_bntUltimoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntAnterior;
+    private javax.swing.JButton bntPrimeiro;
+    private javax.swing.JButton bntProximo;
+    private javax.swing.JButton bntUltimo;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnSalvar;

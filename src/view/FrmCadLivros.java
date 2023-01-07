@@ -129,7 +129,7 @@ public class FrmCadLivros extends javax.swing.JInternalFrame {
             }
         });
 
-        cbxClassificacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selecionar--", "Ação", "Aventura", "Auto Ajuda", "Biografia", "Comédia ", "Conto", "Drama", "Ficção Cientifica", "Infato Juvenil", "Jovem Adulto", "Poesia", "Romance", "Suspense", " ", " ", " " }));
+        cbxClassificacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Selecionar--", "Ação", "Aventura", "Auto Ajuda", "Biografia", "Ciência ", "Comédia", "Conto", "Distopia", "Drama", "Fantasia", "Ficção Cientifica", "Ficção Histórica", "Infato Juvenil", "Jovem Adulto", "Poesia", "Romance", "Suspense", "Terror" }));
         cbxClassificacao.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 cbxClassificacaoComponentHidden(evt);
